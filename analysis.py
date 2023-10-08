@@ -11,12 +11,11 @@ import seaborn as sns
 import statsmodels as sm
 import statsmodels.formula.api as smf
 import os
-
+from shillerdata import ShillerData  ## filename, classname
 
 os.system("ls -hl")
 
-### Read the sheets named 'Data' and 'Mod Data' into data frames.
-from shillerdata import ShillerData
+
 
 
 obj = ShillerData(url = "http://www.econ.yale.edu/~shiller/data/ie_data.xls")
@@ -33,9 +32,10 @@ obj.df_raw.shape
 obj.df.shape
 
 ## pd.DataFrame(obj.df.columns, columns=['colname'])
+## obj.df.loc[ (obj.df['year'].astype(int) > 1930) & (obj.df['yoy_cpi_inflation'] > 3)].loc[:, ['yoy_cpi_inflation', 'yoy_sp_return','long_interest_rate_gs10']].mean()
+##obj.df.loc[ (obj.df['year'].astype(int) > 1930) & (obj.df['yoy_cpi_inflation'] > 3)].loc[:, ['yoy_cpi_inflation', 'yoy_sp_return', 'long_interest_rate_gs10']].median()
 
-obj.df.loc[ (obj.df['year'].astype(int) > 1930) & (obj.df['yoy_cpi_inflation'] > 3)].loc[:, ['yoy_cpi_inflation', 'yoy_sp_return','long_interest_rate_gs10']].mean()
+## TODO...
 
-obj.df.loc[ (obj.df['year'].astype(int) > 1930) & (obj.df['yoy_cpi_inflation'] > 3)].loc[:, ['yoy_cpi_inflation', 'yoy_sp_return', 'long_interest_rate_gs10']].median()
 
 
