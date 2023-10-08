@@ -5,7 +5,8 @@
 import pandas as pd
         
 class ShillerData:
-    def __init__(self, url: str, sheet_name = 'Data', skip_rows = 7, parse_dates = True) -> None:
+    def __init__(self, url: "http://www.econ.yale.edu/~shiller/data/ie_data.xls",
+                 sheet_name = 'Data', skip_rows = 7, parse_dates = True) -> None:
         self.url = url,
         self.sheet_name = sheet_name,
         self.df_raw = pd.read_excel(url, sheet_name = sheet_name, skiprows = skip_rows, parse_dates = parse_dates)

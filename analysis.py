@@ -16,8 +16,7 @@ import os
 os.system("ls -hl")
 
 ### Read the sheets named 'Data' and 'Mod Data' into data frames.
-
-import data.ShillerData
+from shillerdata import ShillerData
 
 
 obj = ShillerData(url = "http://www.econ.yale.edu/~shiller/data/ie_data.xls")
